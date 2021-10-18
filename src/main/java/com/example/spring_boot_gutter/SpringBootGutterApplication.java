@@ -15,8 +15,8 @@ import org.springframework.core.env.Environment;
 
 import java.io.PrintStream;
 
-@SpringBootApplication(exclude={ActiveMQAutoConfiguration.class,
-        DataSourceAutoConfiguration.class})
+@SpringBootApplication(exclude = { ActiveMQAutoConfiguration.class,
+        DataSourceAutoConfiguration.class })
 public class SpringBootGutterApplication {
 
     public static final Logger log = LoggerFactory.getLogger(SpringBootGutterApplication.class);

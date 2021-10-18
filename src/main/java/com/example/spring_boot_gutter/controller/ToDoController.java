@@ -5,7 +5,9 @@ import com.example.spring_boot_gutter.entity.ToDoBuilder;
 import com.example.spring_boot_gutter.repository.CommonRepository;
 import com.example.spring_boot_gutter.validation.ToDoValidationError;
 import com.example.spring_boot_gutter.validation.ToDoValidationErrorBuilder;
+
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
+
 import java.net.URI;
 
 @RequiredArgsConstructor
@@ -42,7 +45,7 @@ public class ToDoController {
         return ResponseEntity.ok().header("Location", location.toString()).build();
     }
 
-    @RequestMapping(value = "/todo", method = {RequestMethod.POST, RequestMethod.PUT})
+    @RequestMapping(value = "/todo", method = { RequestMethod.POST, RequestMethod.PUT })
     public ResponseEntity<?> createToDo(@Valid @RequestBody ToDo todo, Errors errors) {
         if (errors.hasErrors()) {
             return ResponseEntity.badRequest().body(ToDoValidationErrorBuilder.fromBindingsError(errors));

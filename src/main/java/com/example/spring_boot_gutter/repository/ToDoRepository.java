@@ -1,6 +1,7 @@
 package com.example.spring_boot_gutter.repository;
 
 import com.example.spring_boot_gutter.entity.ToDo;
+
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -21,7 +22,7 @@ public class ToDoRepository implements CommonRepository<ToDo> {
     @Override
     public ToDo save(ToDo domain) {
         ToDo result = toDos.get(domain);
-        if(result != null) {
+        if (result != null) {
             result.setModified(LocalDateTime.now());
             result.setDescription(domain.getDescription());
             result.setCompleted(domain.isCompleted());

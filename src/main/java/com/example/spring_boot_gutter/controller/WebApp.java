@@ -13,7 +13,7 @@ public class WebApp {
     private String info;
 
     @GetMapping("/")
-    public String welcome(){
+    public String welcome() {
         return info;
     }
 

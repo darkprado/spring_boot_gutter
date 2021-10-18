@@ -6,7 +6,7 @@ public class ToDoBuilder {
     private String id = null;
     private String description = "";
 
-    private ToDoBuilder(){
+    private ToDoBuilder() {
 
     }
 
